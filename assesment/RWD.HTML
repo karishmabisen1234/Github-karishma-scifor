@@ -3,63 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Web Design Example</title>
+  <title>Responsive Web Design</title>
 
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #89f7fe, #66a6ff);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-    }
-
     .box {
       width: 300px;
       height: 300px;
       background-color: lightblue;
-      border-radius: 15px;
+      margin: 20px auto;
+      border-radius: 10px;
       text-align: center;
       line-height: 300px;
       font-size: 22px;
       color: white;
-      font-weight: bold;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-      transition: background-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
-      animation: fadeInUp 1s ease forwards;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
     .box:hover {
-      transform: scale(1.07);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      transform: scale(1.05);
     }
 
     @media screen and (max-width: 768px) {
-      body {
-        background: linear-gradient(135deg, #f7971e, #ffd200);
-      }
       .box {
         background-color: orange;
       }
     }
 
     @media screen and (max-width: 480px) {
-      body {
-        background: linear-gradient(135deg, #43cea2, #185a9d);
-      }
       .box {
         background-color: teal;
-        width: 90%;
-        height: 250px;
-        line-height: 250px;
-        font-size: 20px;
       }
     }
-
   </style>
 </head>
 
