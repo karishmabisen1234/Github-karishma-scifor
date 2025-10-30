@@ -1,0 +1,30 @@
+body {
+  font-family: "Helvetica", sans-serif;
+  color: #326dee;
+  background-color: #1ac886;
+  padding: 10px;
+}
+
+h1 {
+  font-size: 24px;
+  color: #326dee;
+}
+
+p {
+  color: rgb(14.2432432432, 63.6756756757, 171.7567567568);
+}
+
+.button {
+  background-color: #326dee;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+.button:hover {
+  background-color: rgb(97.0945945946, 142.5405405405, 241.9054054054);
+}
+
+.error {
+  color: #d32752;
+  font-weight: bold;
+}/*# sourceMappingURL=style.css.map */

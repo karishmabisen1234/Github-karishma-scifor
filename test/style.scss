@@ -1,0 +1,50 @@
+
+@use "sass:color";
+
+
+$primary-color: #326dee;
+$secondary-color: #1ac886;
+$error-color: #d32752;
+
+$base-font-family: 'Helvetica', sans-serif;
+$heading-font-size: 24px;
+$paragraph-font-size: 16px;
+$border-radius: 8px;
+
+
+@mixin rounded {
+  border-radius: $border-radius;
+}
+
+
+body {
+  font-family: $base-font-family;
+  color: $primary-color;
+  background-color: $secondary-color;
+  padding: 10px;
+}
+
+h1 {
+  font-size: $heading-font-size;
+  color: $primary-color;
+}
+
+p {
+  color: color.adjust($primary-color, $lightness: -20%);
+}
+
+.button {
+  background-color: $primary-color;
+  color: white;
+  padding: 10px 20px;
+  @include rounded;
+
+  &:hover {
+    background-color: color.adjust($primary-color, $lightness: 10%);
+  }
+}
+
+.error {
+  color: $error-color;
+  font-weight: bold;
+}
