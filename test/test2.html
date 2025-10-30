@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Notes</title>
+  <style>
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: linear-gradient(135deg, #c2e9fb, #a1c4fd);
+      margin: 0;
+      padding: 20px;
+      color: #222;
+    }
+
+    .container {
+      background: #ffffff;
+      max-width: 900px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: #004aad;
+      text-shadow: 1px 1px 3px #fff;
+    }
+
+    h2 {
+      color: #003366;
+      border-bottom: 2px solid #004aad;
+      padding-bottom: 5px;
+      margin-top: 30px;
+    }
+
+    p, li {
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    pre {
+      background: #f3f3f3;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-family: "Courier New", monospace;
+      overflow-x: auto;
+    }
+
+    b {
+      color: #004aad;
+    }
+
+    ul {
+      margin-left: 25px;
+    }
+
+    .example-title {
+      font-weight: bold;
+      color: #d63384;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>CSS Notes</h1>
+
+    <h2>1. What is CSS and Why Do We Use It in Web Development?</h2>
+    <p><b>CSS</b> stands for <b>Cascading Style Sheets</b>. It is used to design and style a webpage created with HTML. CSS defines how elements will appear — including layout, color, font, and positioning — to make webpages visually attractive and organized.</p>
+
+    <h2>2. Difference Between Inline, Internal, and External CSS (with Examples)</h2>
+
+    <p><b>I) Inline CSS:</b> CSS that is written directly within the HTML element using the <code>style</code> attribute.</p>
+    <p class="example-title">Example:</p>
+    <pre>
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1 style="color: blue"&gt;This is a HTML page&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+    <p><b>II) Internal CSS:</b> CSS that is written inside the <code>&lt;style&gt;</code> tag within the <code>&lt;head&gt;</code> section of an HTML document.</p>
+    <p class="example-title">Example:</p>
+    <pre>
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        div {
+            background-color: lightgray;
+            color: blue;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;
+        Hello this is test
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+    <p><b>III) External CSS:</b> CSS that is written in a separate <code>.css</code> file and linked to an HTML document using the <code>&lt;link&gt;</code> tag. This method is best for large websites or multiple pages.</p>
+    <p class="example-title">Example:</p>
+    <pre>
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;This is a web page&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+    <h2>3. Define the CSS Box Model and Describe Its Components</h2>
+    <p>The <b>CSS Box Model</b> represents how elements are structured and how their size is calculated. It includes the total height and width of an element.</p>
+    <p><b>Components of Box Model:</b></p>
+    <ul>
+      <li><b>Margin:</b> The outer space of the element (outside the border).</li>
+      <li><b>Border:</b> The line between margin and padding.</li>
+      <li><b>Padding:</b> The space between the content and border (inner space).</li>
+      <li><b>Content:</b> The actual text, image, or element inside the box.</li>
+    </ul>
+
+    <h2>4. Difference Between ID and Class Selectors in CSS</h2>
+    <ul>
+      <li><b>ID:</b> Used for styling a single unique element. It cannot be reused. Selected using <code>#</code> symbol.<br>
+        Example: <code>#title { color: red; }</code></li>
+      <li><b>Class:</b> Used for styling multiple elements (group). It can be reused. Selected using <code>.</code> symbol.<br>
+        Example: <code>.box { background-color: yellow; }</code></li>
+    </ul>
+  </div>
+</body>
+</html>
