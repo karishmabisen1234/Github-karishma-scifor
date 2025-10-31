@@ -6,35 +6,41 @@
   <title>Simple Responsive Box</title>
 
   <style>
-  
+    body {
+      color: pink;
+      font-family: Arial, sans-serif;
+    }
+
     .container {
       box-sizing: border-box;
     }
-  
+
     .box {
       width: 200px;
       height: 200px;
-      background: lightblue;
+      background: black;
       margin: 10px auto;
       color: white;
-      font-family: Arial, sans-serif;
       border-radius: 8px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     @media (max-width: 768px) {
-      .box{
-                color: blueviolet;
-                background-color: cadetblue;
-                text-align: center;
-            }
-        }
-    @media (max-width: 400px){
-            .box{
-                color: aqua;
-                background-color: yellow;
-                text-align: center;
-            }
-        }
+      .box {
+        color: blueviolet;
+        background-color: cadetblue;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .box {
+        color: aqua;
+        background-color: navy;
+      }
+    }
   </style>
 </head>
 

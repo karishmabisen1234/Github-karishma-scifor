@@ -1,0 +1,18 @@
+.dark-theme{
+    $bg-color:black;
+$text-color:white;
+
+    color: $text-color;
+    background: $bg-color;
+    border: 5px solid teal;
+}
+
+.light-theme{
+
+    $bg-color:white;
+$text-color:black;
+
+     color: $text-color;
+    background: $bg-color;
+    border: 5px solid peru;
+}

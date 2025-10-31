@@ -1,0 +1,11 @@
+.dark-theme {
+  color: white;
+  background: black;
+  border: 5px solid teal;
+}
+
+.light-theme {
+  color: black;
+  background: white;
+  border: 5px solid peru;
+}/*# sourceMappingURL=just.css.map */
