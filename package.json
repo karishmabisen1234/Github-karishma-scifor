@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+  },
+  "name": "github-karishma-scifor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karishmabisen1234/Github-karishma-scifor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karishmabisen1234/Github-karishma-scifor/issues"
+  },
+  "homepage": "https://github.com/karishmabisen1234/Github-karishma-scifor#readme"
+}
