@@ -6,24 +6,20 @@
   <title>Bootstrap Pagination</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="container mt-4 text-center">
-
-  <h2>Simple Bootstrap Pagination</h2>
-
-  <!-- Pagination -->
+<body class="container">
   <nav>
     <ul class="pagination justify-content-center">
       <li class="page-item disabled">
         <a class="page-link" href="#">Previous</a>
       </li>
       <li class="page-item active">
-        <a class="page-link" href="#">1</a>
+        <a class="page-link" href="one">1</a>
       </li>
       <li class="page-item">
-        <a class="page-link" href="#">2</a>
+        <a class="page-link" href="two">2</a>
       </li>
       <li class="page-item">
-        <a class="page-link" href="#">3</a>
+        <a class="page-link" href="three">3</a>
       </li>
       <li class="page-item">
         <a class="page-link" href="#">Next</a>
@@ -33,3 +29,12 @@
 
 </body>
 </html>
+
+<!--
+<ul class="pagination"> → for Bootstrap  pagination styling
+justify-content-center is used to center the pagination buttons on the page
+pagination → main container for pagination buttons
+page-item → each button wrapper
+page-link → clickable styled link
+active → current page highlight
+disabled → inactive button-->

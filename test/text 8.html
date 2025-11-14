@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foundation Registration Form</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css">
+</head>
+
+<body>
+
+  <h3>Registration Form</h3>
+
+  <form>
+    <label>Full Name
+      <input type="text" placeholder="Enter your full name" required>
+    </label>
+
+    <label>Mobile Number
+      <input type="number" placeholder="Enter your mobile number" required>
+    </label>
+
+    <label>Email
+      <input type="email" placeholder="Enter your email" required>
+    </label>
+
+    <label>Password
+      <input type="password" placeholder="Enter your password" required>
+    </label>
+
+
+    <label>Gender:</label>
+    <input type="radio" name="gender" value="male" id="male">
+    <label for="male">Male</label>
+
+    <input type="radio" name="gender" value="female" id="female">
+    <label for="female">Female</label>
+
+    <input type="radio" name="gender" value="other" id="other">
+    <label for="other">Other</label>
+
+    <br><br>
+
+    <label>
+      <input type="checkbox" required>
+      I agree to the terms
+    </label>
+
+    <button type="submit" class="button">Submit</button>
+
+  </form>
+
+</body>
+</html>

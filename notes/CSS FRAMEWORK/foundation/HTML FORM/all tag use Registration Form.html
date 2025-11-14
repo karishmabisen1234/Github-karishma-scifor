@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites/dist/css/foundation.min.css">
+</head>
+<body class="grid-container">
+
+    <h3>Registration Form</h3>
+
+    <form>
+
+        <!-- Username -->
+        <label for="username">Enter your Username</label>
+        <input type="text" id="username" name="username">
+
+        <!-- Password -->
+        <label for="password">Enter your Password</label>
+        <input type="password" id="password" name="password">
+
+        <!-- Email -->
+        <label for="email">Enter your Email</label>
+        <input type="email" id="email" name="email">
+
+        <!-- Date -->
+        <label for="dob">Select Date</label>
+        <input type="date" id="dob" name="dob">
+
+        <!-- Dropdown -->
+        <label for="city">Select your City</label>
+        <select id="city" name="city">
+            <option value="">--Choose--</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="delhi">Delhi</option>
+            <option value="pune">Pune</option>
+        </select>
+
+        <!-- Checkbox -->
+        <label>
+            <input type="checkbox" name="agree">
+            I agree to the terms & conditions
+        </label>
+
+        <!-- Textarea -->
+        <label for="message">Enter your Message</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <!-- File Upload -->
+        <label for="file">Upload File</label>
+        <input type="file" id="file" name="file">
+
+        <br>
+
+        <!-- Buttons -->
+        <input type="submit" class="button success" value="Submit">
+        <input type="reset" class="button alert" value="Reset">
+
+    </form>
+
+</body>
+</html>
