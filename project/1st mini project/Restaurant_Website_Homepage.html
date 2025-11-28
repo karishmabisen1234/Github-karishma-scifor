@@ -1,0 +1,287 @@
+<!--Mini 1 project
+Restaurant Website Homepage (HTML Only)
+Sections to create:
+
+1. Navigation Bar
+Home | Menu | About Us | Contact
+
+2. Hero Section
+Large heading: "Welcome to Tasty Bites"
+Add background image using HTML background attribute (optional)
+Add tagline
+
+3. Menu Section
+Use cards with:
+Food image
+Name
+Price
+( HTML structure, CSS needed)
+
+4. Special Dishes Table 
+Create a table:
+Dish
+Ingredients
+Price
+
+5. Customer Feedback Use <blockquote> to show 2–3 feedback messages
+6. Contact Us Form
+Name
+Phone
+Email
+Message
+Submit
+add responsiveness also.-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasty Bites - Restaurant</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        
+    }
+
+    nav {
+        background: #ff5722;
+        padding: 15px;
+        text-align: center;
+    }
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .hero {
+        background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') no-repeat center/cover;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-shadow: 2px 2px 5px black;
+        text-align: center;
+    }
+    .hero h1 {
+        font-size: 40px;
+        margin: 0;
+    }
+    .hero p {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .menu-section {
+        padding: 20px;
+        text-align: center;
+    }
+    .menu-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .card {
+        border: 1px solid #ddd;
+        width: 250px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 5px #aaa;
+        text-align: left;
+    }
+    .card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+    .card .content {
+        padding: 10px;
+    }
+
+    table {
+        width: 90%;
+        margin: 20px auto;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid #444;
+        padding: 10px;
+        text-align: center;
+    }
+    th {
+        background-color:lightseagreen;
+    }
+
+    .feedback {
+        padding: 20px;
+        background: #fff8e1;
+    }
+
+    form {
+        width: 90%;
+        max-width: 400px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 0 5px #999;
+    }
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid #aaa;
+    }
+    button {
+        width: 100%;
+        padding: 10px;
+        background: #ff5722;
+        color: white;
+        border: none;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+        .hero h1 { font-size: 30px; }
+        .menu-cards { flex-direction: column; align-items: center; }
+    }
+</style>
+<body>
+
+    <nav>
+    <a href="#">Home</a>
+    <a href="#">Menu</a>
+    <a href="#">About Us</a>
+    <a href="#">Contact</a>
+    </nav>
+    
+    <section class = "hero" >
+    <h1>Welcome to My Tasty Bites</h1>
+    <p>Delicious food made with love!</p>
+</section>
+
+<section class="menu-section">
+    <h2>Our Menu</h2>
+    <div class="menu-cards">
+
+        <div class="card">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.HubUls0TEoHIJO3r0vUvLAHaEO?pid=Api&P=0&h=180"alt="">
+            <div class="content">
+                <h3>Veg Burger</h3>
+                <p>Price: ₹120</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.hR0DYvrFcW9YT4wlGuADAQHaE8?pid=Api&P=0&h=180" alt="">
+            <div class="content">
+                <h3>Margherita Pizza</h3>
+                <p>Price: ₹250</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.Z7ery5l96Ts3tUbyWxF5GQHaEK?pid=Api&P=0&h=180" alt="">
+            <div class="content">
+                <h3>Pasta Alfredo</h3>
+                <p>Price: ₹180</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<h2 style="text-align:center;">Special Dishes</h2>
+<table>
+    <tr>
+        <th>Dish</th>
+        <th>Ingredients</th>
+        <th>Price</th>
+    </tr>
+    <tr>
+        <td >Paneer Tikka</td>
+        <td>Paneer, Spices, Lemon</td>
+        <td>₹220</td>
+    </tr>
+    <tr>
+        <td>Gulab Jamun</td>
+        <td>Khoya, Sugar Syrup</td>
+        <td>₹80</td>
+    </tr>
+
+    <tr>
+        <td>Vada Paw</td>
+        <td>Potato ,Green Chutney</td>
+        <td>₹60</td>
+    </tr>
+
+    <tr>
+        <td>Chicken Biryani</td>
+        <td>Chicken, Rice, Masala</td>
+        <td>₹300</td>
+    </tr>
+
+    <tr>
+        <td> Veg Noodles</td>
+        <td>Noodles,Vegetables</td>
+        <td>₹90</td>
+    </tr>
+
+    <tr>
+        <td>Idli</td>
+        <td>Rice,Sambar</td>
+        <td>₹70</td>
+    </tr>
+
+    <tr>
+        <td>Rasgulla</td>
+        <td>Sugar-Syrup,Chena</td>
+        <td>₹100</td>
+    </tr>
+</table>
+
+<section class="feedback">
+    <h2 style="text-align:center;">Customer Feedback</h2>
+
+    <ul>
+    <blockquote>
+       <li>“Amazing food! The pizza was outstanding. Highly recommend!”</li> 
+    </blockquote>
+
+    <blockquote>
+        <li>“Very fast service and super tasty biryani. Loved it!”</li>
+    </blockquote>
+
+    <blockquote>
+       <li>“Affordable and delicious. Best restaurant in town!”</li>
+    </blockquote>
+
+    <blockquote>
+       <li>“Loved all the dishes. We will definitely come again!”</li>
+    </blockquote>
+    </ul>
+</section>
+
+<h2 style="text-align:center;">Contact Us</h2>
+<form>
+    <input type="text" placeholder="Your Name">
+    <input type="number" placeholder="Phone">
+    <input type="email" placeholder="Email">
+    <textarea rows="4" placeholder="Your Feedback Message"></textarea>
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
