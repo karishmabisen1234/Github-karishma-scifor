@@ -5,9 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        var age=prompt("Enter the age: ")
-        var find_age=age>18?'adult':'child'
-        document.write("you are age is "+" "+find_age)
+        var age = prompt("Enter the age: ");
+        age = Number(age);
+
+        var output;
+
+        switch (true) {
+            case (age > 18):
+                result = "adult";
+                break;
+
+            default:
+                output = "child";
+        }
+
+        document.write("You are " + output);
     </script>
 </head>
 <body>
