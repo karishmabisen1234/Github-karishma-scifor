@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       function calculator(a, b, operator) {
+        if (operator === "add") {
+            return a + b;
+        } else if (operator === "sub") {
+            return a - b;
+        } else if (operator === "mul") {
+            return a * b;
+        } else if (operator === "div") {
+            return a / b;
+        } else {
+            return "Invalid operator";
+        }
+        }
+
+
+
+const calculator2 = function(a, b, operator) {
+    switch (operator) {
+        case "add":
+        return a + b;
+        case "sub":
+        return a - b;
+        case "mul":
+        return a * b;
+        case "div":
+        return a / b;
+        default:
+        return "Invalid operator";
+    }
+    };
+
+
+console.log("Function Declaration Results:");
+console.log(calculator(10, 5, "add")); 
+console.log(calculator(10, 5, "mul")); 
+
+console.log("Function Expression Results:");
+console.log(calculator2(8, 4, "sub"));
+console.log(calculator2(8, 4, "div")); 
+</script>
+</head>
+<body>
+    
+</body>
+</html>
