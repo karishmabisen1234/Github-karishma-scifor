@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        function f1() 
+        let fruits=["karishma","lucky","arti","pinku","pallu","shruti"]
+        fruits.shift()  // only removes the first element
+        for(let i=0; i<fruits.length; i++)
         {
-        let message = "Hello, I am inside the function";
-        console.log("Inside function:", message); 
+        console.log(fruits[i])
         }
-
-      f1();
-
-     console.log("Outside function:", message); 
     </script>
 </head>
 <body>
