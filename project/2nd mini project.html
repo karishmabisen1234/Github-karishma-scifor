@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Form - Phase 1</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+
+    input {
+        padding: 6px;
+        margin: 5px;
+    }
+
+    button {
+        padding: 6px 10px;
+        cursor: pointer;
+    }
+
+    table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: center;
+    }
+</style>
+</head>
+
+<body>
+
+<h2>Student Form</h2>
+
+<input type="text" id="name" placeholder="Name">
+<input type="email" id="email" placeholder="Email">
+<input type="text" id="course" placeholder="Course">
+<input type="text" id="mobile" placeholder="Mobile">
+<button onclick="addStudent()">Add</button>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Mobile</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+</table>
+
+<script>
+    let students = [];
+    let editIndex = -1;
+
+    function addStudent() {
+
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let course = document.getElementById("course").value;
+        let mobile = document.getElementById("mobile").value;
+
+        let student = {
+            name: name,
+            email: email,
+            course: course,
+            mobile: mobile
+        };
+
+        if (editIndex == -1) {
+            students.push(student);
+        } else {
+            students[editIndex] = student;
+            editIndex = -1;
+        }
+
+        clearForm();
+        showData();
+    }
+
+    function showData() {
+        let tbody = document.getElementById("tableBody");
+        tbody.innerHTML = "";
+
+        for (let i = 0; i < students.length; i++) {
+            tbody.innerHTML +=
+                "<tr>" +
+                "<td>" + students[i].name + "</td>" +
+                "<td>" + students[i].email + "</td>" +
+                "<td>" + students[i].course + "</td>" +
+                "<td>" + students[i].mobile + "</td>" +
+                "<td>" +
+                "<button onclick='editStudent(" + i + ")'>Edit</button> " +
+                "<button onclick='deleteStudent(" + i + ")'>Delete</button>" +
+                "</td>" +
+                "</tr>";
+        }
+    }
+
+    function editStudent(i) {
+        document.getElementById("name").value = students[i].name;
+        document.getElementById("email").value = students[i].email;
+        document.getElementById("course").value = students[i].course;
+        document.getElementById("mobile").value = students[i].mobile;
+        editIndex = i;
+    }
+
+    function deleteStudent(i) {
+        students.splice(i, 1);
+        showData();
+    }
+
+    function clearForm() {
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("course").value = "";
+        document.getElementById("mobile").value = "";
+    }
+</script>
+
+
+</body>
+</html>

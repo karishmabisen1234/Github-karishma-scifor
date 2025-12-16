@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Example</title>
+    <script>
+        let person = {
+            name: "Karishma",
+            age: 22,
+            city: "Nagpur",
+            course: "BTECH",
+            weight: 45,
+            height: 155
+        };
+        console.log(person.age);  
+              
+        console.log(person["city"]);    
+
+        person.age = 23;
+        console.log(person.age);
+
+        person.gender = "Female";
+        console.log(person.gender);
+
+        delete person.height;
+        console.log(person);
+
+
+
+        let student ={
+            name :"lucky",
+            output : function(){
+                console.log("hii");
+            }
+        };
+        student.output();
+        
+    </script>
+</head>
+<body>
+</body>
+</html>=
+

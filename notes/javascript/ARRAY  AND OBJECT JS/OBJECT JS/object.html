@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Example</title>
+    <script>
+        // Object creation
+        let person = {
+            name: "Karishma",
+            age: 22,
+            city: "Nagpur",
+            course: "BTECH",
+            weight: 45,
+            height: 155
+        };
+        // Access object values
+        console.log(person.age);        // Dot notation
+        console.log(person["city"]);    // Bracket notation
+
+        // Modify existing value
+        person.age = 23;
+        console.log(person.age);
+
+        // Add new property
+        person.gender = "Female";
+        console.log(person.gender);
+
+        // Delete a property
+        delete person.height;
+        console.log(person);
+
+
+        let student ={
+            name :"lucky",
+            output : function(){
+                console.log("hii");
+            }
+        };
+        student.output();
+        
+    </script>
+</head>
+<body>
+</body>
+</html>
+
