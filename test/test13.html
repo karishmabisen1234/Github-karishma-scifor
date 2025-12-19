@@ -1,0 +1,52 @@
+<!--1. Create an object student with properties: name, age, course, isPlaced.
+Print all values using dot notation and bracket notation.
+
+2. Create an object mobile and:
+Add a new property price
+Update brand
+Delete warranty-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test 13</title>
+    <script>
+
+        let student = {
+            name: "Karishma",
+            age: 21,
+            course: "BTech",
+            isPlaced: true
+        };
+
+        console.log(student.name);
+        console.log(student.age);
+        console.log(student.course);
+        console.log(student.isPlaced);
+
+        console.log(student["name"]);
+        console.log(student["age"]);
+        console.log(student["course"]);
+        console.log(student["isPlaced"]);
+
+
+
+        let mobile = {
+            brand: "Realme",
+            model: "Narzo 50",
+            warranty: "2 year"
+        };
+
+        mobile.price = 20000;
+
+        mobile.brand = "Apple";
+
+        delete mobile.warranty;
+
+        console.log(mobile);
+    </script>
+</head>
+<body>
+</body>
+</html>

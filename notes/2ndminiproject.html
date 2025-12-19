@@ -1,0 +1,228 @@
+<!--
+    Student Management Dashboard
+    Create a student form (Name, Email, Course, Mobile) and display data in a table.
+    Store data in an array of objects and implement Add, Edit, Delete using JavaScript.
+    Use proper DOM manipulation and external CSS for styling.
+    
+ Phase 2 (Tomorrow):
+    AJAX theory will be completed, then you will integrate AJAX to fetch data dynamically (no page reload).
+    Please follow instructions strictly. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Form - Phase 1</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+
+    input {
+        padding: 6px;
+        margin: 5px;
+    }
+
+    button {
+        padding: 6px 10px;
+        cursor: pointer;
+    }
+
+    table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: center;
+    }
+</style>
+</head>
+
+<body>
+
+<h2>Student Form</h2>
+
+<input type="text" id="name" placeholder="Name">
+<input type="email" id="email" placeholder="Email">
+<input type="text" id="course" placeholder="Course">
+<input type="text" id="mobile" placeholder="Mobile">
+<button onclick="addStudent()">Add</button>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Mobile</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+</table>
+
+<script>                  // let -- Jis variable ki value change hogi 
+    let students = [];   // empty array like array data store karta hai
+    let editIndex = -1;  //Ye batata hai ki hum edit mode me hain ya nahi. like decide karta hai add hoga ya edit
+
+    function addStudent() {       //addStudent() form ka data uthata hai aur ek student ka object banata hai
+
+        let name = document.getElementById("name").value;      // document → pura HTML page
+        let email = document.getElementById("email").value;    // getElementById("name") → input field jiska id name hai
+        let course = document.getElementById("course").value;   // .value → jo user ne type kiya
+        let mobile = document.getElementById("mobile").value;
+
+        let student = {
+            name: name,
+            email: email,
+            course: course,         // ye object hai  aur Object = ek cheez jisme related information ek saath ho
+            mobile: mobile
+        };
+
+        if (editIndex == -1) {       // check krta hai ki edit mode me hai ya nhi
+            students.push(student);     // push () -- naya student add
+        } else {
+            students[editIndex] = student;   //if editIndex jis index pe hai usi position ka data replace ho jaata hai
+            editIndex = -1; // dobara normal add mode me aa jaate hain Nahi likhoge to har baar overwrite hota rahega
+        }
+
+        clearForm();    // Input boxes empty kar deta hai
+        showData();     // Table ko refresh/update karta hai
+    }
+
+    function showData() {
+        let tbody = document.getElementById("tableBody");    // Isi ke andar rows add hoti hain.
+        tbody.innerHTML = "";                                // Purana data clear karna
+ 
+        for (let i = 0; i < students.length; i++) {           // Har student ke liye 1 row banegi
+            tbody.innerHTML +=
+                "<tr>" +                                      // Table row banana
+                "<td>" + students[i].name + "</td>" +        // students[i] = current student
+                "<td>" + students[i].email + "</td>" +        // .name / .email = object ki value
+                "<td>" + students[i].course + "</td>" +        
+                "<td>" + students[i].mobile + "</td>" +
+                "<td>" +                                       // // <td> = table column
+                "<button onclick='editStudent(" + i + ")'>Edit</button> " +     //Array में जो data है, उसे loop से पढ़कर table 
+                "<button onclick='deleteStudent(" + i + ")'>Delete</button>" +   // में नए-नए rows बनाकर screen पर दिखाता है।
+                "</td>" +
+                "</tr>";
+        }
+    }
+
+    function editStudent(i) {      // यह function student की details को form में load करके edit mode activate करता है।
+        document.getElementById("name").value = students[i].name;
+        document.getElementById("email").value = students[i].email;
+        document.getElementById("course").value = students[i].course;
+        document.getElementById("mobile").value = students[i].mobile;
+        editIndex = i;
+    }
+
+    function deleteStudent(i) {
+        students.splice(i, 1);       // यह function array से student को हटाकर DOM को update करता है।
+        showData();
+    }
+
+    function clearForm() {
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = ""; //यह function form के सभी input fields को खाली (reset) कर देता है।
+        document.getElementById("course").value = "";
+        document.getElementById("mobile").value = "";
+    } 
+
+    // DOM JavaScript ko HTML elements ke saath interact karne deta hai।
+    // DOM = HTML ko JS se control karna
+</script>
+</body>
+</html>
+
+
+<!--  STUDENT FORM – WORKING FLOW DIAGRAM
+
+            User Form Fill Karta Hai
+            (Name, Email, Course, Mobile)
+                        ↓
+            Add / Save Button Click
+                        ↓
+            addStudent() Function Call
+                        ↓
+            Form Se Values Li Jati Hain
+            (name, email, course, mobile)
+                        ↓
+            Student Object Banta Hai
+                        ↓
+            Check: editIndex == -1 ?
+                    ↓              ↓
+                YES             NO
+            (New Student)   (Edit Student)
+                    ↓              ↓
+            students.push()  students[editIndex] = student
+                    ↓              ↓
+                        editIndex = -1
+                                ↓
+                        clearForm() Call
+                                ↓
+                        showData() Call
+                                ↓
+                        Table Clear Hoti Hai
+                                        ↓
+                    Loop Se Students Array Read
+                                        ↓
+                        Table Me Rows Create
+                                        ↓
+                        Edit / Delete Buttons
+                                        ↓
+                            Updated Table  -->
+
+
+
+                    <!-- EDIT BUTTON FLOW       
+
+                    Edit Button Click
+                            ↓
+                    editStudent(i)
+                            ↓
+                    students[i] Ka Data Form Me Aata Hai
+                            ↓
+                    editIndex = i Set Hota Hai
+                            ↓
+                    User Data Change Karta Hai
+                            ↓
+                    Save Button Click
+                            ↓
+                    addStudent()
+                            ↓
+                    Student Data Update -->
+
+
+                    <!-- DELETE BUTTON FLOW    
+
+                    Delete Button Click
+                            ↓
+                    deleteStudent(i)
+                            ↓
+                    students.splice(i,1)
+                            ↓
+                    Student Remove
+                            ↓
+                    showData()
+                            ↓
+                    Table Updat -->
+
+
+
+                    
+                        <!-- CLEAR FORM FLOW
+
+                            clearForm()
+                                ↓
+                        All Input Fields Empty  -->
