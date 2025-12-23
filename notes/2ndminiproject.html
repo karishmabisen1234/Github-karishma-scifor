@@ -29,6 +29,8 @@
     button {
         padding: 6px 10px;
         cursor: pointer;
+        background-color: aqua;
+        color: black;
     }
 
     table {
@@ -57,6 +59,7 @@
 <input type="text" id="course" placeholder="Course">
 <input type="text" id="mobile" placeholder="Mobile">
 <button onclick="addStudent()">Add</button>
+<button onclick="loadStudentsAJAX()">Load Students (AJAX)</button>
 
 <table>
     <thead>
@@ -141,6 +144,26 @@
 
     // DOM JavaScript ko HTML elements ke saath interact karne deta hai।
     // DOM = HTML ko JS se control karna
+
+
+    // ================= AJAX PART =================
+    function loadStudentsAJAX() {                  // ajax function
+        fetch("https://jsonplaceholder.typicode.com/users")    // API se users ka data mangta hai
+            .then(response => response.json())                 //response ko JSON format me convert karta hai
+            .then(data => {
+                students = data.map(user => ({                 //har user ko student object me badalta hai
+                    name: user.name,
+                    email: user.email,
+                    course: "AJAX Course",
+                    mobile: user.phone
+                }));
+                showData();
+            })
+            .catch(error => {                          //agar error aaye to alert aur console me error dikhata hai
+                alert("Error while fetching data");
+                console.log(error);
+            });
+    } // bina page reload kiye API se data laakar students list me show karna.
 </script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Student Management Dashboard- Phase 1</title>
+<title>Student Management Dashboard- Phase 2 (AJAX)</title>
 
 <style>
     body {
@@ -20,6 +20,7 @@
         padding: 6px 10px;
         background-color: aqua;
         color: black;
+        margin: 5px;
     }
 
     table {
@@ -45,7 +46,9 @@
 <input type="email" id="email" placeholder="Email">
 <input type="text" id="course" placeholder="Course">
 <input type="text" id="mobile" placeholder="Mobile">
+
 <button onclick="addStudent()">Add</button>
+<button onclick="loadStudentsAJAX()">Load Students (AJAX)</button>
 
 <table>
     <thead>
@@ -65,22 +68,17 @@
     let editIndex = -1;
 
     function addStudent() {
-
         let name = document.getElementById("name").value;
         let email = document.getElementById("email").value;
         let course = document.getElementById("course").value;
         let mobile = document.getElementById("mobile").value;
 
-        let student = {
-            name: name,
-            email: email,
-            course: course,
-            mobile: mobile
-        };
+        let student = { name, email, course, mobile };
 
-        if (editIndex == -1) {
+        if (editIndex === -1) {
             students.push(student);
-        } else {
+        }
+         else {
             students[editIndex] = student;
             editIndex = -1;
         }
@@ -90,19 +88,18 @@
     }
 
     function showData() {
-        let tbody = document.getElementById("tableBody");
-        tbody.innerHTML = "";
-
-        for (let i = 0; i < students.length; i++) {
+        let tbody = document.getElementById("tableBody");    
+        tbody.innerHTML = "";                                
+        for (let i = 0; i < students.length; i++) {           
             tbody.innerHTML +=
-                "<tr>" +
-                "<td>" + students[i].name + "</td>" +
-                "<td>" + students[i].email + "</td>" +
-                "<td>" + students[i].course + "</td>" +
+                "<tr>" +                                      
+                "<td>" + students[i].name + "</td>" +        
+                "<td>" + students[i].email + "</td>" +        
+                "<td>" + students[i].course + "</td>" +        
                 "<td>" + students[i].mobile + "</td>" +
-                "<td>" +
-                "<button onclick='editStudent(" + i + ")'>Edit</button> " +
-                "<button onclick='deleteStudent(" + i + ")'>Delete</button>" +
+                "<td>" +                                       
+                "<button onclick='editStudent(" + i + ")'>Edit</button> " +     
+                "<button onclick='deleteStudent(" + i + ")'>Delete</button>" +  
                 "</td>" +
                 "</tr>";
         }
@@ -127,8 +124,26 @@
         document.getElementById("course").value = "";
         document.getElementById("mobile").value = "";
     }
-</script>
 
+    
+    function loadStudentsAJAX() {
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then(response => response.json())
+            .then(data => {
+                students = data.map(user => ({ 
+                    name: user.name,
+                    email: user.email,
+                    course: "AJAX Course",
+                    mobile: user.phone
+                }));
+                showData();
+            })
+            .catch(error => {
+                alert("Error while fetching data");
+                console.log(error);
+            });
+    }
+</script>
 
 </body>
 </html>
