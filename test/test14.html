@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AJAX User Data</title>
+
+<style>
+  body {
+    font-family: Arial;
+  }
+  .user {
+    border-bottom: 1px solid #ccc;
+    padding: 8px 0;
+  }
+</style>
+
+</head>
+<body>
+
+<h2>User List</h2>
+<div id="output"></div>
+
+<script>
+  
+  let A = new XMLHttpRequest();
+
+
+  A.open("GET", "https://jsonplaceholder.typicode.com/users", true);
+
+  
+  A.onload = function () {
+    if (A.status === 200) {
+
+      
+      let users = JSON.parse(A.responseText);
+      let result = "";
+
+      
+      for (let i = 0; i < users.length; i++) {
+        result += `
+          <div class="user">
+            <b>Name:</b> ${users[i].name} <br>
+            <b>Email:</b> ${users[i].email}
+          </div>
+        `;
+      }
+
+      
+      document.getElementById("output").innerHTML = result;
+    }
+  };
+
+  
+  A.send();
+</script>
+
+</body>
+</html>
