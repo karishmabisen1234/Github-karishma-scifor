@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    function checkUser(username) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          username === "Priyaa"
+            ? reject("Username already exists")
+            : resolve("Username is available");
+        }, 1000);
+      });
+    }
+
+    function registerUser(username) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(`User ${username} registered successfully`);
+        }, 1000);
+      });
+    }
+c
+    async function register(username) {
+      try {
+        const checkMsg = await checkUser(username);
+        console.log(checkMsg);
+
+        const registerMsg = await registerUser(username);
+        console.log(registerMsg);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    // Call function
+    register("Karishma");
+  </script>
+</head>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<button onclick="loadUsers()">Load Users</button>
+
+<ul id="users"></ul>
+
+<script>
+function loadUsers() {
+  fetch("https://jsonplaceholder.typicode.com/users")
+    .then(A => A.json())
+    .then(data => {
+      data.forEach(user => {
+        document.getElementById("users").innerHTML +=
+          "<li>" + user.name + "</li>";
+      });
+    });
+}
+</script>
+</body>
+</html>
