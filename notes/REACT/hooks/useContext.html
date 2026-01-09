@@ -1,41 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>React Component Example</title>
+  <title>useContext Example</title>
 </head>
 <body>
 
-<!-- React yahan render hoga -->
 <div id="root"></div>
 
-<!-- React CDN -->
 <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
 <script type="text/babel">
+  const { createContext, useContext } = React;
 
-  /* 🔹 Component 1: Button Component */
-  function MyButton() {
-    return <button>Click Me</button>;
+  const UserContext = createContext();
+
+  function Child() {
+    const user = useContext(UserContext);
+    return <h3>User: {user}</h3>;
   }
 
-  /* 🔹 Component 2: App Component (Main Component) */
   function App() {
     return (
-      <>
-        <h1>My First React App</h1>
-
-        {/* Component ko yahan use kiya */}
-        <MyButton />
-        <MyButton />
-      </>
+      <UserContext.Provider value="Karishma">
+        <Child />
+      </UserContext.Provider>
     );
   }
 
-  /* 🔹 Render App component */
   ReactDOM.createRoot(document.getElementById("root")).render(<App />);
-
 </script>
 
 </body>

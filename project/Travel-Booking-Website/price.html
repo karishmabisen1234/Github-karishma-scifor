@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Karishma Travel | Price List</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ===== BASIC ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: #ff3b3b;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+header nav a {
+  color: #fff;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  color: #ffdada;
+}
+
+/* ===== PAGE TITLE ===== */
+h2 {
+  text-align: center;
+  color: #ff3b3b;
+  margin: 20px 0;
+}
+
+/* ===== TABLE CONTAINER ===== */
+.table-box {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+/* ===== TABLE STYLING ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background: #ff3b3b;
+  color: #fff;
+  font-size: 15px;
+}
+
+tr:hover {
+  background: #ffe6e6;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+footer a {
+  color: #ff3b3b;
+  text-decoration: none;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🌏 Karishma Travel</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="destination.html">Destinations</a>
+    <a href="booking.html">Booking</a>
+    <a href="price.html">Price List</a>
+    <a href="confirmation.html">Confirmation</a>
+  </nav>
+</header>
+
+<h2>Price List From Nagpur</h2>
+
+<div class="table-box">
+<table>
+<thead>
+<tr>
+  <th>From</th>
+  <th>To</th>
+  <th>General ₹</th>
+  <th>Reservation ₹</th>
+  <th>Non-AC ₹</th>
+  <th>AC ₹</th>
+  <th>Sleeper ₹</th>
+</tr>
+</thead>
+
+<tbody id="priceTable"></tbody>
+</table>
+</div>
+
+<footer>
+<p>© 2026 Karishma Travel</p>
+</footer>
+
+<script>
+const prices = [
+  { to:"Amravati", g:350, r:450, nonac:550, ac:1500, sleeper:900 },
+  { to:"Wardha", g:300, r:400, nonac:500, ac:1000, sleeper:850 },
+  { to:"Chandrapur", g:500, r:650, nonac:800, ac:1000, sleeper:1000 },
+  { to:"Akola", g:550, r:700, nonac:850, ac:1100, sleeper:1000 },
+  { to:"Yavatmal", g:600, r:750, nonac:900, ac:1200, sleeper:1100 },
+
+  { to:"Pune", g:800, r:1000, nonac:1200, ac:1500, sleeper:900 },
+  { to:"Mumbai", g:1100, r:1400, nonac:1700, ac:2100, sleeper:800 },
+  { to:"Nashik", g:750, r:950, nonac:1150, ac:1450, sleeper:1150 },
+  { to:"Aurangabad", g:700, r:900, nonac:1100, ac:1400, sleeper:1100 },
+  { to:"Kolhapur", g:1200, r:1500, nonac:1800, ac:2200, sleeper:2100 },
+
+  { to:"Bhopal", g:1000, r:1300, nonac:1600, ac:2000, sleeper:1400 },
+  { to:"Indore", g:1100, r:1400, nonac:1700, ac:2100, sleeper:1900 },
+  { to:"Raipur", g:950, r:1200, nonac:1500, ac:1850, sleeper:1300 },
+
+  { to:"Hyderabad", g:1500, r:1900, nonac:2300, ac:2800, sleeper:1400 },
+  { to:"Vijayawada", g:1700, r:2100, nonac:2500, ac:3000, sleeper:1300 },
+
+  { to:"Delhi", g:1800, r:2200, nonac:2700, ac:3300, sleeper:2000 },
+  { to:"Jaipur", g:1600, r:2000, nonac:2400, ac:2900, sleeper:1500 },
+  { to:"Lucknow", g:1700, r:2100, nonac:2600, ac:3100, sleeper:1800 },
+
+  { to:"Bangalore", g:2000, r:2500, nonac:3000, ac:3600, sleeper:1300 },
+  { to:"Chennai", g:2200, r:2700, nonac:3200, ac:3900, sleeper:1600 },
+  { to:"Kochi", g:2500, r:3000, nonac:3600, ac:4300, sleeper:4000 }
+];
+
+const table = document.getElementById("priceTable");
+
+prices.forEach(p=>{
+ table.innerHTML += `
+ <tr>
+  <td>Nagpur</td>
+  <td>${p.to}</td>
+  <td>${p.g}</td>
+  <td>${p.r}</td>
+  <td>${p.nonac}</td>
+  <td>${p.ac}</td>
+  <td>${p.sleeper}</td>
+ </tr>`;
+});
+</script>
+
+</body>
+</html>

@@ -1,41 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>React Component Example</title>
+  <title>useRef Example</title>
 </head>
 <body>
 
-<!-- React yahan render hoga -->
 <div id="root"></div>
 
-<!-- React CDN -->
 <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
 <script type="text/babel">
+  const { useRef } = React;
 
-  /* 🔹 Component 1: Button Component */
-  function MyButton() {
-    return <button>Click Me</button>;
-  }
-
-  /* 🔹 Component 2: App Component (Main Component) */
   function App() {
+    const inputRef = useRef();
+
     return (
       <>
-        <h1>My First React App</h1>
-
-        {/* Component ko yahan use kiya */}
-        <MyButton />
-        <MyButton />
+        <h2>useRef Example</h2>
+        <input ref={inputRef} />
+        <button onClick={() => inputRef.current.focus()}>
+          Focus Input
+        </button>
       </>
     );
   }
 
-  /* 🔹 Render App component */
   ReactDOM.createRoot(document.getElementById("root")).render(<App />);
-
 </script>
 
 </body>

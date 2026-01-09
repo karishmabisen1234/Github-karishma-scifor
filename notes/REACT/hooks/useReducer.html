@@ -1,41 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>React Component Example</title>
+  <title>useReducer Example</title>
 </head>
 <body>
 
-<!-- React yahan render hoga -->
 <div id="root"></div>
 
-<!-- React CDN -->
 <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
 <script type="text/babel">
+  const { useReducer } = React;
 
-  /* 🔹 Component 1: Button Component */
-  function MyButton() {
-    return <button>Click Me</button>;
+  function reducer(state, action) {
+    if (action === "INC") return state + 1;
+    if (action === "DEC") return state - 1;
+    return state;
   }
 
-  /* 🔹 Component 2: App Component (Main Component) */
   function App() {
+    const [count, dispatch] = useReducer(reducer, 0);
+
     return (
       <>
-        <h1>My First React App</h1>
-
-        {/* Component ko yahan use kiya */}
-        <MyButton />
-        <MyButton />
+        <h2>useReducer Example</h2>
+        <p>{count}</p>
+        <button onClick={() => dispatch("INC")}>+</button>
+        <button onClick={() => dispatch("DEC")}>-</button>
       </>
     );
   }
 
-  /* 🔹 Render App component */
   ReactDOM.createRoot(document.getElementById("root")).render(<App />);
-
 </script>
 
 </body>

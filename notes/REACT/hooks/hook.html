@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>React Hooks Demo</title>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    function App() {
+      const [count, setCount] = React.useState(10); // hook
+
+      return (
+        <div>
+          <h2>Count: {count}</h2>
+          <button onClick={() => setCount(count + 1)}>increase</button>
+           <button onClick={() => setCount(count - 1)}>decrese</button>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById("root"))
+      .render(<App />);
+  </script>
+
+</body>
+</html>

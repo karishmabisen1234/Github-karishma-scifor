@@ -1,42 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>React Component Example</title>
+  <title>useDeferredValue Example</title>
 </head>
 <body>
-
-<!-- React yahan render hoga -->
 <div id="root"></div>
 
-<!-- React CDN -->
 <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
 <script type="text/babel">
+  const { useState, useDeferredValue } = React;
 
-  /* 🔹 Component 1: Button Component */
-  function MyButton() {
-    return <button>Click Me</button>;
-  }
-
-  /* 🔹 Component 2: App Component (Main Component) */
   function App() {
+    const [text, setText] = useState("");
+    const deferredText = useDeferredValue(text);
+
     return (
       <>
-        <h1>My First React App</h1>
-
-        {/* Component ko yahan use kiya */}
-        <MyButton />
-        <MyButton />
+        <input onChange={(e) => setText(e.target.value)} />
+        <p>{deferredText}</p>
       </>
     );
   }
 
-  /* 🔹 Render App component */
   ReactDOM.createRoot(document.getElementById("root")).render(<App />);
-
 </script>
-
 </body>
 </html>

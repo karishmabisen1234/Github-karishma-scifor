@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booking Confirmation</title>
+<style>
+/* ===== PAGE ===== */
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #ffcccc, #ffe6e6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.confirmation-container {
+  width: 90%;
+  max-width: 500px;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== TITLE ===== */
+h1 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #ff3b3b;
+}
+
+/* ===== DETAILS BOX ===== */
+.confirmation-box {
+  margin-top: 20px;
+  padding: 20px;
+  text-align: left;
+
+  background: #fff0f0;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-box p {
+  margin: 12px 0;
+  font-size: 18px;
+}
+
+/* ===== HIGHLIGHT TEXT ===== */
+.highlight {
+  color: #ff3b3b;
+  font-weight: bold;
+}
+
+/* ===== BUTTON / LINK ===== */
+a {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 25px;
+
+  background: #ff3b3b;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+a:hover {
+  background: #e60000;
+}
+</style>
+</head>
+<body>
+
+<div class="confirmation-container">
+  
+  <h1>✅ Booking Confirmed!</h1>
+
+  <div class="confirmation-box">
+
+    <p>User Name: <span class="highlight" id="summaryUser"></span></p>
+
+    <p>From: <span class="highlight" id="summaryFrom"></span></p>
+
+    <p>To: <span class="highlight" id="summaryTo"></span></p>
+
+    <p>Ticket Type: <span class="highlight" id="summaryTicket"></span></p>
+
+    <p>Passengers: <span class="highlight" id="summaryPassengers"></span></p>
+
+    <p>Price per Ticket: ₹<span class="highlight" id="summaryPrice"></span></p>
+
+    <p>Total Price: ₹<span class="highlight" id="summaryTotal"></span></p>
+
+  </div><a href="index.html">Back to Home</a></div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+document.getElementById('summaryUser').innerText = params.get('user');
+document.getElementById('summaryFrom').innerText = params.get('from');
+document.getElementById('summaryTo').innerText = params.get('to');
+document.getElementById('summaryTicket').innerText = params.get('ticket');
+document.getElementById('summaryPassengers').innerText = params.get('passengers');
+document.getElementById('summaryPrice').innerText = params.get('price');
+document.getElementById('summaryTotal').innerText = params.get('total');
+</script>
+</body>
+</html>

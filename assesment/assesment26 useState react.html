@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assesment useState </title>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    function App() {
+        
+      const [text, setText] = React.useState("Welcome to My React Page");
+
+      const [bgColor, setBgColor] = React.useState("lightblue");
+
+      return (
+        <div style={{
+          backgroundColor: bgColor,
+          height: "100vh",
+          textAlign: "center",
+          paddingTop: "50px"
+        }}>
+
+          <h2>{text}</h2>
+
+          <button onClick={() => setText("Hello My Name is Karishma!")}> Change Text</button>
+
+          <br /><br />
+
+          <button onClick={() => setBgColor("lightpink")}> Change Background color</button>
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+</body>
+</html>

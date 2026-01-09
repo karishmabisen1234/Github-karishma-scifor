@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>React Component Example</title>
+  <title>useImperativeHandle Example</title>
 </head>
 <body>
-
-<!-- React yahan render hoga -->
 <div id="root"></div>
 
-<!-- React CDN -->
 <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
 <script type="text/babel">
+  const { useRef, forwardRef, useImperativeHandle } = React;
 
-  /* 🔹 Component 1: Button Component */
-  function MyButton() {
-    return <button>Click Me</button>;
-  }
+  const Child = forwardRef((props, ref) => {
+    useImperativeHandle(ref, () => ({
+      showAlert() {
+        alert("Hello from Child");
+      }
+    }));
+    return <h3>Child Component</h3>;
+  });
 
-  /* 🔹 Component 2: App Component (Main Component) */
   function App() {
+    const childRef = useRef();
+
     return (
       <>
-        <h1>My First React App</h1>
-
-        {/* Component ko yahan use kiya */}
-        <MyButton />
-        <MyButton />
+        <Child ref={childRef} />
+        <button onClick={() => childRef.current.showAlert()}>
+          Call Child Method
+        </button>
       </>
     );
   }
 
-  /* 🔹 Render App component */
   ReactDOM.createRoot(document.getElementById("root")).render(<App />);
-
 </script>
-
 </body>
 </html>

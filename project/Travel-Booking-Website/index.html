@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Karishma Travel Booking</title>
+
+  <!-- ================= BASIC STYLES ================= -->
+  <style>
+    /* ===== RESET (browser default remove) ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f5f7fa;
+    }
+
+    /* ================= HEADER ================= */
+    header {
+      background-color: #8b1c1c;
+      color: white;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 18px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* ================= HERO SECTION ================= */
+    .hero {
+      height: 80vh;
+      background: linear-gradient(
+          rgba(0, 0, 0, 0.45),
+          rgba(0, 0, 0, 0.45)
+        ),
+        url("https://www.weloveto.travel/sites/default/files/styles/1280/public/upload/media/image/2025-02/B04%20AdobeStock_334777839%20(1).jpeg")
+        center / cover no-repeat;
+
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: center;
+      padding-top: 120px;
+      color: white;
+    }
+
+    .hero h2 {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 28px;
+    }
+
+    /* ================= BUTTON ================= */
+    .btn {
+      padding: 12px 32px;
+      background: #ff3b3b;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #e60000;
+    }
+
+    /* ================= FOOTER ================= */
+    .footer {
+      background: #0b1c3d;
+      color: white;
+      padding: 40px 20px 10px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .footer-box {
+      flex: 1;
+      min-width: 220px;
+      margin: 15px;
+    }
+
+    .footer-box h3 {
+      margin-bottom: 15px;
+      font-size: 18px;
+      border-bottom: 2px solid white;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .footer-box p,
+    .footer-box li {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .footer-box ul {
+      list-style: none;
+    }
+
+    .footer-box ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-box ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer-box ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.3);
+      margin-top: 20px;
+      padding-top: 10px;
+      font-size: 14px;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hero h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header>
+    <div class="logo">🌍 Karishma Travel</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="booking.html">Booking</a>
+      <a href="price.html">Price</a>
+      <a href="confirmation.html">Confirmation</a>
+    </nav>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div>
+      <h2>Explore the World with Love</h2>
+      <p>Book your dream destination easily and affordably</p>
+      <a href="destinations.html" class="btn">View Destinations</a>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-box">
+        <h3>Karishma Travel</h3>
+        <p>
+          We provide affordable and reliable travel booking services.
+          Explore beautiful destinations with comfort and safety.
+        </p>
+      </div>
+
+      <div class="footer-box">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="booking.html">Booking</a></li>
+          <li><a href="price.html">Price</a></li>
+          <li><a href="confirmation.html">Confirmation</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-box">
+        <h3>Contact Us</h3>
+        <p>📍 India</p>
+        <p>📧 support@karishmatravel.com</p>
+        <p>📞 +91 98765 43210</p>
+      </div>
+
+      <div class="footer-box">
+        <h3>Follow Us</h3>
+        <p>🌐 📘 📸 🐦</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Karishma Bisen | All Rights Reserved
+    </div>
+  </footer>
+
+</body>
+</html>
