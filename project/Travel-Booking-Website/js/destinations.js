@@ -69,7 +69,7 @@ const destinations = {
   ]
 };
 
-// Load destinations dynamically
+
 const loadDestinations = mode => {
   const list = document.getElementById("destinationList");
   const title = document.getElementById("modeTitle");
@@ -88,12 +88,12 @@ const loadDestinations = mode => {
   });
 };
 
-// Book Now button
+
 const bookNow = (place, price) => {
   window.location.href = `booking.html?place=${encodeURIComponent(place)}&price=${price}`;
 };
 
-// Search function
+
 function searchDestination() {
   const query = document.getElementById('searchInput').value.toLowerCase();
   const filtered = [];
@@ -113,8 +113,7 @@ function searchDestination() {
     card.innerHTML = `
       <h3>${d.name}</h3>
       <p>Starting from ₹${d.price}</p>
-      <button onclick="bookNow('${d.name}', ${d.price})">Book Now</button>
-    `;
+      <button onclick="bookNow('${d.name}', ${d.price})">Book Now</button>`;
     list.appendChild(card);
   });
 
@@ -122,5 +121,5 @@ function searchDestination() {
   title.textContent = query ? `Search Results for "${query}"` : 'All Destinations';
 }
 
-// Load default (bus)
+
 loadDestinations("bus");

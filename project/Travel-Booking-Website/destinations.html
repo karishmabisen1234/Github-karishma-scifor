@@ -18,7 +18,7 @@ html {
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f8ff; /* light blue background */
+  background-color: lightblue;
 }
 
 a {
@@ -28,7 +28,7 @@ a {
 
 /* ================= HEADER ================= */
 header {
-  background-color: #ff3b3b;
+  background-color: red;
   color: white;
   padding: 20px;
   text-align: center;
@@ -41,11 +41,10 @@ header h1 {
 header nav a {
   margin: 0 15px;
   font-weight: bold;
-  transition: color 0.3s ease;
 }
 
 header nav a:hover {
-  color: #ffe5e5;
+  color: wheat;
 }
 
 /* ================= SEARCH BAR ================= */
@@ -67,7 +66,7 @@ header nav a:hover {
 
 .search-bar input:focus {
   transform: scale(1.03);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: black;
 }
 
 /* ================= MODE BUTTONS ================= */
@@ -82,14 +81,13 @@ header nav a:hover {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  background-color: #ff3b3b;
+  background-color:red;
   color: white;
   font-weight: bold;
-  transition: background-color 0.3s ease;
 }
 
 .mode-buttons button:hover {
-  background-color: #e60000;
+  background-color: red;
 }
 
 /* ================= PAGE TITLE ================= */
@@ -97,7 +95,7 @@ header nav a:hover {
   text-align: center;
   margin: 10px 0 20px;
   font-size: 28px;
-  color: #222;
+  color:black;
 }
 
 /* ================= DESTINATION CARDS ================= */
@@ -105,7 +103,6 @@ header nav a:hover {
   max-width: 1200px;
   margin: auto;
   padding: 0 20px 40px;
-
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
@@ -117,7 +114,6 @@ header nav a:hover {
   padding: 20px;
   text-align: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
@@ -128,28 +124,27 @@ header nav a:hover {
 .card h3 {
   margin-bottom: 10px;
   font-size: 22px;
-  color: #ff3b3b;
+  color: red;
 }
 
 .card p {
   margin-bottom: 15px;
   font-size: 16px;
-  color: #444;
+  color:rgb(68, 67, 67);
 }
 
 .card button {
   padding: 10px 20px;
   border: none;
   border-radius: 6px;
-  background-color: #ff3b3b;
+  background-color: red;
   color: white;
   font-size: 14px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .card button:hover {
-  background-color: #e60000;
+  background-color:red;
 }
 
 /* ===== ABOUT SECTION ===== */
@@ -157,18 +152,18 @@ header nav a:hover {
   max-width: 900px;
   margin: 40px auto;
   padding: 30px;
-  background: #fff0f0;
+  background: whitesmoke;
   border-radius: 12px;
   text-align: center;
 }
 
 .about-section h2 {
-  color: #ff3b3b;
+  color: red;
   margin-bottom: 10px;
 }
 
 .about-text {
-  color: #444;
+  color:black;
   margin-bottom: 25px;
 }
 
@@ -191,13 +186,13 @@ header nav a:hover {
 }
 
 .feature-card h4 {
-  color: #ff3b3b;
+  color: red;
   margin: 10px 0 5px;
 }
 
 .feature-card p {
   font-size: 14px;
-  color: #555;
+  color:grey;
 }
 
 
@@ -206,18 +201,18 @@ header nav a:hover {
   max-width: 900px;
   margin: 40px auto;
   padding: 30px;
-  background: #f0f8ff;
+  background: whitesmoke;
   border-radius: 12px;
   text-align: center;
 }
 
 .contact-section h2 {
-  color: #ff3b3b;
+  color: red;
   margin-bottom: 10px;
 }
 
 .contact-text {
-  color: #444;
+  color:black;
   margin-bottom: 25px;
 }
 
@@ -240,19 +235,19 @@ header nav a:hover {
 }
 
 .contact-card h4 {
-  color: #ff3b3b;
+  color: red;
   margin: 8px 0;
 }
 
 .contact-card p,
 .contact-card small {
   font-size: 14px;
-  color: #555;
+  color:dark grey;
 }
 
 /* ================= FOOTER ================= */
 footer {
-  background-color: #333;
+  background-color:black;
   color: white;
   text-align: center;
   padding: 20px 10px;
@@ -260,7 +255,7 @@ footer {
 }
 
 footer a {
-  color: #ff3b3b;
+  color: red;
 }
 
 footer a:hover {
@@ -282,7 +277,7 @@ footer a:hover {
 </head>
 <body>
 
-  <!-- HEADER -->
+  
   <header>
     <h1>🌏 Karishma Travel</h1>
     <nav>
@@ -294,12 +289,12 @@ footer a:hover {
     </nav>
   </header>
 
-  <!-- SEARCH BAR -->
+  
   <div class="search-bar">
     <input type="text" id="searchInput" placeholder="Search Destination..." onkeyup="searchDestination()">
   </div>
 
-  <!-- MODE BUTTONS -->
+  
   <div class="mode-buttons">
     <button onclick="loadDestinations('bus')">Bus</button>
     <button onclick="loadDestinations('train')">Train</button>
@@ -307,15 +302,15 @@ footer a:hover {
     <button onclick="loadDestinations('cab')">Cab</button>
   </div>
 
-  <!-- PAGE TITLE -->
+
   <h2 id="modeTitle">Bus Destinations</h2>
 
-  <!-- DESTINATION CARDS -->
+
   <div id="destinationList" class="card-container"></div>
 
-  <!-- ================= ABOUT SECTION ================= -->
-<section id="about" class="about-section">
 
+<section id="about" class="about-section">
+  
   <h2>About Karishma Travel</h2>
   <p class="about-text">
     Karishma Travel provides safe, comfortable, and affordable journeys across India.
@@ -349,8 +344,6 @@ footer a:hover {
 </section>
 
 
-  <!-- ================= CONTACT SECTION ================= -->
-
 <section id="contact" class="contact-section">
 
   <h2>Contact Us</h2>
@@ -382,12 +375,12 @@ footer a:hover {
   </div>
 </section>
 
-  <!-- FOOTER -->
+
   <footer>
     <p>© 2026 Karishma Travel. All rights reserved.</p>
   </footer>
 
-  <!-- LINK JS -->
+
   <script src="js/destinations.js"></script>
 </body>
 </html>

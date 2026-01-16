@@ -6,12 +6,12 @@
 <title>Booking Confirmation</title>
 <style>
 /* ===== PAGE ===== */
+
 body {
   margin: 0;
   height: 100vh;
   font-family: Arial, sans-serif;
-  background: linear-gradient(to right, #ffcccc, #ffe6e6);
-
+  background: lightblue;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,19 +21,18 @@ body {
 .confirmation-container {
   width: 90%;
   max-width: 500px;
-  background: #ffffff;
+  background: lightpink;
   padding: 40px;
   border-radius: 15px;
   text-align: center;
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px black;
 }
 
 /* ===== TITLE ===== */
 h1 {
   margin-bottom: 20px;
   font-size: 28px;
-  color: #ff3b3b;
+  color: red;
 }
 
 /* ===== DETAILS BOX ===== */
@@ -41,10 +40,9 @@ h1 {
   margin-top: 20px;
   padding: 20px;
   text-align: left;
-
-  background: #fff0f0;
+  background:white;
   border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px lightblue;
 }
 
 .confirmation-box p {
@@ -54,7 +52,7 @@ h1 {
 
 /* ===== HIGHLIGHT TEXT ===== */
 .highlight {
-  color: #ff3b3b;
+  color: red;
   font-weight: bold;
 }
 
@@ -63,23 +61,21 @@ a {
   display: inline-block;
   margin-top: 25px;
   padding: 12px 25px;
-
-  background: #ff3b3b;
-  color: #ffffff;
+  background:blueviolet;
+  color: white;
+  box-shadow: 0 5px 15px black;
   text-decoration: none;
   font-weight: bold;
-
   border-radius: 8px;
-  transition: background 0.3s;
 }
 
 a:hover {
-  background: #e60000;
+  background: pink;
+  color: black;
 }
 </style>
 </head>
 <body>
-
 <div class="confirmation-container">
   
   <h1>✅ Booking Confirmed!</h1>
@@ -114,3 +110,4 @@ document.getElementById('summaryTotal').innerText = params.get('total');
 </script>
 </body>
 </html>
+
